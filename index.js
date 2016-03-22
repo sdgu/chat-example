@@ -15,3 +15,10 @@ io.on('connection', function(socket){
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
+
+io.configure(function()
+{
+  io.set('transports', ['xhr-polling']);
+  io.set('polling duration', 10);
+
+})
